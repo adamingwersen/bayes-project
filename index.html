@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bayesian Statistics Project</title>
+
+		<meta name="description" content="Hierarchichal Ratings Models and Startcraft II">
+		<meta name="author" content="Adam Frederik Ingwersen Linnemann">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+				<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>Hierarchical Rating Models</h2>
+					<h3>... and their application</h3>
+					<p>
+						<small>Slides by <a href="github.com/adamingwersen">Adam Ingwersen</a></small>
+						<hr>
+						<small>Powered by <a href="https://github.com/hakimel/reveal.js">reveal.js</a></small>
+					</p>
+				</section>
+
+				<section data-transition="zoom" id="fragments">
+					<h3>Typical applications</h3>
+					<ul>
+						<li class="fragment">Political Elections</li>
+						<li class="fragment">Sports Leauges</li>
+					</ul>
+					<br>
+					<br>
+					<h3 class="fragment">What i'll be doing</h3>
+					<ul>
+						<li class="fragment">Starcraft II</li>
+					</ul>
+				 </section>
+
+				 <section data-background-image="https://media.giphy.com/media/6uDMSkZW2B3B6/giphy.gif">
+					 <h3>What's Starcraft II?</h3>
+				 </section>
+
+				 <section id="fragments">
+					 <h3>Why is it interesting?</h3>
+						 <p class="fragment">It's not, necessarily</p>
+						 <p class="fragment">... but <b>betting</b> makes most things marginally more interesting</p>
+						 <p class="fragment">... and building a good model may result in:</p>
+				 </section>
+
+				 <section data-background-image="https://media.giphy.com/media/VTxmwaCEwSlZm/giphy.gif">
+				 </section>
+
+				<section id="fragments">
+					<h3>How do we get there?</h3>
+					<ul>
+						<li class="fragment">Contruct baseline Ratings Model</li>
+						<li class="fragment">Extend to Hierarchichal Ratings Model that takes information on e.g. map, faction</li>
+						<li class="fragment">Compare results and approach with <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.182.8659&rep=rep1&type=pdf">Baio & Blangiardo</a></li>
+						<li class="fragment">Toolkit: <a href="https://www.python.org/downloads/">python 3.6</a> + <a href="https://docs.pymc.io/">pymc3</a> + <a href="http://deeplearning.net/software/theano/">theano</a> + <a href="https://www.scipy.org/">scipy</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>The data</h3>
+					<p class="fragment">The Starcraft II Matches History Data from <a href="https://www.kaggle.com/alimbekovkz/starcraft-ii-matches-history">Kaggle</a></p>
+					<img src="images/sc2head.png", alt="tablesc2", style="border: 0;" class="fragment">
+					<p class="fragment"><b>374.794</b> played games</p>
+					<p class="fragment"><b>1.856</b> different players</p>
+					<p class="fragment">Sampling prior to MCMC is needed</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
